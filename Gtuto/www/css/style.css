@@ -1,0 +1,18 @@
+/* Empty. Add your own CSS if you like */
+.logo{
+  background: url(../img/login.jpg) no-repeat center center fixed;
+  /*background:url(../img/fondo.jpg) no-repeat center center fixed;*/
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+.fondo{
+  background: #303b47 no-repeat center center fixed;
+  /*background:url(../img/fondo.jpg) no-repeat center center fixed;*/
+  /*scroll-content*/
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}

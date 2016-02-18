@@ -1,0 +1,42 @@
+{
+  "token": "true",
+  "persona": {
+    "identificacion": "0921250601001",
+    "primerNombre": "FERNANDA",
+    "segundoNombre": "MARICELA",
+    "primerApellido": "SOTO",
+    "segundoApellido": "GUERRERO",
+    "estadoCivil": "Soltero",
+    "nacionalidad": "ECUATORIANA",
+    "fechaNacimiento": "",
+    "telefonos": [
+      {
+        "codigoPais": "593",
+        "codigoArea": "",
+        "numero": "0994658346",
+        "extension": "0",
+        "tipoTelefono": "Celular",
+        "operadora": "Claro"
+      },
+      {
+        "codigoPais": "593",
+        "codigoArea": "07",
+        "numero": "2570275",
+        "extension": "2975",
+        "tipoTelefono": "Fijo",
+        "operadora": "Corporación Nacional De Telecomunicaciones Cnt"
+      }
+    ],
+    "direccion": {
+      "tipo": "Oficina",
+      "provinciaNombre": "LOJA",
+      "cantonNombre": "NO DEFINIDO",
+      "parroquiaNombre": "NODEFINIDO",
+      "zonaResidencialNombre": "",
+      "barrio": "",
+      "callePrincipal": "San Cayetano alto",
+      "calleSecundaria": "Marcelino Champagnat",
+      "referencia": "UTPL"
+    }
+  }
+}

@@ -1,0 +1,20 @@
+<link href="css/style.css" rel="stylesheet">
+<ion-view view-title="Inicio de sesión">
+  <ion-content class="padding fondo">
+    <div class="list">
+      <div class="list list-inset">
+        <label class="item item-input">
+            <input type="text" placeholder="Usuario" ng-model="data.username">
+        </label>
+        <label class="item item-input">
+            <input ng-show="showpassword" type="text" placeholder="Password" ng-model="data.password">
+            <input ng-hide="showpassword" type="password" placeholder="Password" ng-model="data.password">
+            <ion-checkbox ng-model="showpassword" ng-checked="false"></ion-checkbox>
+        </label>        
+      </div>
+    </div>
+    <button  class="button button-block button-outline button-balanced"ng-disabled="!data.username || !data.password"ng-click="login()">
+      Ingresar
+    </button>
+  </ion-content>
+</ion-view>  

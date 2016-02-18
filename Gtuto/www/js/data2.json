@@ -1,0 +1,23 @@
+[
+  {
+    "guid_coe": "1eb6d5d5-c3d9-00f4-e053-ac10360cbec4",
+    "nom_coe": "TIC-EC 2015",
+    "cod_coe": "UTPL-TN0047",
+    "titulacion": "DERECHO",
+    "variacion": "DERECHO UTPL-ECTS 1C"
+  },
+  {
+    "guid_coe": "1c6c2ad9-8715-0072-e053-ac1036334fde",
+    "nom_coe": "GESTIÓN DE PROYECTOS",
+    "cod_coe": "PRE-TNCCO084",
+    "titulacion": "SISTEMAS INFORMÁTICOS Y COMPUTACIÓN",
+    "variacion": "SISTEMAS INFORMÁTICOS Y COMPUTACIÓN UTPL-ECTS 1C"
+  },
+  {
+    "guid_coe": "1c6fc932-3c19-0030-e053-ac10360ca317",
+    "nom_coe": "METODOLOGIAS AGILES",
+    "cod_coe": "PRE-TNCCO210",
+    "titulacion": "SISTEMAS INFORMÁTICOS Y COMPUTACIÓN",
+    "variacion": "SISTEMAS INFORMÁTICOS Y COMPUTACIÓN UTPL-ECTS 1C"
+  }
+]

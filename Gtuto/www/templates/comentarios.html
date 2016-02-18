@@ -1,0 +1,27 @@
+<ion-view  view-title="tutoría">
+  <ion-content class="fondo">
+      <ion-item type="item-text-wrap" ng-repeat="i in datos |filter: {title:d}">
+        <div class="list card">
+            <div class="item item-input-inset">
+              <label class="item-input-wrapper">            
+                <h2>
+                  Comentarios
+                </h2>
+              </label>
+            </div>
+        </div>
+        <div class="list card">
+          <label class="item item-input item-stacked-label">
+            <i class="icon ion-ios-person "></i>
+            <span class="input-label">Patricio Jimenez</span>
+            <input type="text" placeholder="la tutoria es muy interesante" ng-disabled="true">
+          </label>
+          <label class="item item-input item-stacked-label">
+            <i class="icon ion-ios-person "></i>
+            <span class="input-label">Marco Jimenez</span>
+            <input type="text" placeholder="Esta interesante"  ng-disabled="true">
+          </label>
+        </div>
+    </ion-view>
+  </ion-content>
+</ion-item>        
