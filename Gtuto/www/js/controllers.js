@@ -4,14 +4,14 @@ angular.module('starter.controllers', ['ngResource'])//se anade la dependencia n
     this.servicioUs = function(username,password) {
       var user=username;
       var password=password;
-      return $http.get('http://carbono.utpl.edu.ec:8080/wscodigosqr/webresources/entidades.qrusuarios/userlogin?usuario=fmsoto');
+      return $http.get('');
     };
 }])//Este ServUsuario se crea para hacer el logeo de usuarios, para ello en LoginCtrl se lo llama
 
 .service('ServCompEdu', ['$http',function($http) {
     this.servicioCompEdu = function(cedula) {
       var ced=cedula;
-      return $http.get('http://carbono.utpl.edu.ec:8080/wscodigosqr/webresources/entidades.qrcomponenteedu/componentes_docente?cedula='+ced+'&guid_pdo=12b33259-97c8-00be-e053-ac10360d00be');
+      return $http.get('');
     };
 }])//Este ServCompEdu se crea para mostrar los componentes educativos, para ello en CrtlLista se lo llama enviando la cedula del user
 
@@ -19,14 +19,14 @@ angular.module('starter.controllers', ['ngResource'])//se anade la dependencia n
     this.servicioPostTuto = function(tema,ubicacion,horario,nom_coe) {
       return $http({
               method: 'GET',
-              url: 'http://carbono.utpl.edu.ec:8080/smartlandiotv2/webresources/entidades.datos/insert?apikey=3bff8615827f32442199fdb2ed4df4&trama={"Nombre":"'+tema+'","Apellido":"'+ubicacion+'","Sexo":"'+horario+'","Residencia":"'+nom_coe+'"}',
+              url: '={"Nombre":"'+tema+'","Apellido":"'+ubicacion+'","Sexo":"'+horario+'","Residencia":"'+nom_coe+'"}',
             });
     };
 }])//Este servicioPostTuto se crea para enviar datos al servidor smartland, para ello recibo tema,ubicacion,horario e id del componente
 
 .service('MostrarTuto', ['$http',function($http) {
     this.servicioMostrarTuto = function() {
-      return $http.get('http://carbono.utpl.edu.ec:8080/smartlandiotv2/webresources/entidades.datos/get?apikey=3bff8615827f32442199fdb2ed4df4');
+      return $http.get('');
     };
 }])//Este ServMostrarTuto se crea para mostrar las tutorias creadas. Ademas esta funcion no recibe parametros
 
