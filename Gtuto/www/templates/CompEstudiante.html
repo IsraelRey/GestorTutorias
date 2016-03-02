@@ -1,0 +1,20 @@
+<ion-view view-title="Componentes">
+  <ion-content class="fondo">
+    <div class="list card">
+      <div class="item item-input-inset">
+        <label class="item-input-wrapper">
+           <h4>
+             PERÍODO ACADÉMICO: Oct/2015 - Feb/2016
+          </h4>
+        </label>
+      </div>
+    </div>
+    <div class="list card">
+      <ion-list>
+        <ion-item type="item-text-wrap" ng-repeat="i in datosCompEst" href="#/Gtuto/componentesEst/{{i.nombre}}">
+          <h3 ng-repeat="y in i.paralelos">{{i.nombre}} [{{y.nombre}}]</h3>       
+        </ion-item>
+      </ion-list>
+    </div> 
+  </ion-content>
+</ion-view> 

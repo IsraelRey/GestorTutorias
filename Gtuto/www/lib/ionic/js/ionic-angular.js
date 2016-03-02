@@ -2,7 +2,7 @@
  * Copyright 2015 Drifty Co.
  * http://drifty.com/
  *
- * Ionic, v1.2.4-nightly-1917
+ * Ionic, v1.2.2
  * A powerful HTML5 mobile app framework.
  * http://ionicframework.com/
  *
@@ -1780,7 +1780,7 @@ IonicModule
     },
 
     scrolling: {
-      jsScrolling: true
+      jsScrolling: false
     },
 
     spinner: {
@@ -1839,11 +1839,8 @@ IonicModule
     tabs: {
       style: 'striped',
       position: 'top'
-    },
-
-    scrolling: {
-      jsScrolling: false
     }
+
   });
 
   // Windows Phone
@@ -10567,7 +10564,7 @@ IonicModule
 * ```
 */
 IonicModule
-.directive('ionLabel', [function() {
+.directive('ionLabel', ['$timeout', function($timeout) {
   return {
     restrict: 'E',
     require: '?^ionInput',
@@ -10590,7 +10587,9 @@ IonicModule
           ionInputCtrl.setInputAriaLabeledBy(id);
 
           $element.on('click', function() {
-            ionInputCtrl.focus();
+            $timeout(function() {
+              ionInputCtrl.focus();
+            });
           });
         }
       };

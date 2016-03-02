@@ -32,7 +32,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       templateUrl:'templates/login.html',
       controller: 'LoginCtrl'
     })
-    // Se crea un padre de vista en este caso tabs
+    // PADRE DE VISTAS TABS DOCENTE
     .state('tabs',{
       cache: false,
       url:'/Gtuto',
@@ -40,89 +40,131 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       templateUrl:'templates/tabs.html'
     })
     //Hijos de TABS
-    //PERFIL TAB
-    .state('tabs.perfil', {
+    .state('tabs.perfilDocente', {
       cache: false,
       url:'/perfil',
       views:{
         'perfil-tab':{
-          templateUrl:'templates/perfil.html',
+          templateUrl:'templates/perfilDocente.html',
           controller:'SalirCtrl'
         }
       }
     })
-    //Componentes TAB
-    .state('tabs.componentes', {
+    .state('tabs.CompDocente', {
       cache: false,
       url:'/componentes',
       views:{
         'componentes-tab':{
-          templateUrl:'templates/componentes.html',
-          controller:'ControladorLista'
+          templateUrl:'templates/CompDocente.html',
+          controller:'DocenteCtrl'
         }
       }
     })    
-    .state('tabs.ListaSemanalesTutorias', {
+    .state('tabs.ListaTutoDocente', {
       cache: false,
       url:'/componentes/:nom_coe',
       views:{
         'componentes-tab':{
-          templateUrl:'templates/ListaSemanalesTutorias.html',
-          controller:'ControladorLista'
+          templateUrl:'templates/ListaTutoDocente.html',
+          controller:'DocenteCtrl'
         }
       }
     })
-    .state('tabs.ResumenTutoria', {
+    .state('tabs.CrearTutoria', {
       cache: false,
-      url:'/componentes/:nom_coe/:cod_coe',
+      url:'/componentes/:nom_coe/:paralelo',
       views:{
         'componentes-tab':{
-          templateUrl:'templates/ResumenTutoria.html',
-          controller:'ControladorLista'
+          templateUrl:'templates/CrearTutoria.html',
+          controller:'DocenteCtrl'
         }
       }
     })
-    //contenido
-    .state('tabs.contenido', {
+    .state('tabs.ContEdicionTuto', {
       cache: false,
       url:'/componentes/:Nom_coe/EdicionTutorias/:id',
       views:{
         'componentes-tab':{
-          templateUrl:'templates/contenido.html',
-          controller:'ControladorLista'
+          templateUrl:'templates/ContEdicionTuto.html',
+          controller:'DocenteCtrl'
         }
       }
     })
-    //comentarios
     .state('tabs.comentarios', {
       cache: false,
       url:'/componentes/:componentesId/:c/:f/:d',
       views:{
         'componentes-tab':{
           templateUrl:'templates/comentarios.html',
-          controller:'ControladorLista'
+          controller:'DocenteCtrl'
         }
       }
     })
-    //participantes
     .state('tabs.participantes', {
       cache: false,
       url:'/componentes/:componentesId/:c/:f/:d/:e',
       views:{
         'componentes-tab':{
           templateUrl:'templates/participantes.html',
-          controller:'ControladorLista'
+          controller:'DocenteCtrl'
         }
       }
     })
-    //Notificaciones TAB
-    .state('tabs.notificaciones', {
+    .state('tabs.notDoc', {
       cache: false,
       url:'/notificaciones',
       views:{
         'notificaciones-tab':{
-          templateUrl:'templates/notificaciones.html',
-          controller:'ControladorLista'
+          templateUrl:'templates/NotDoc.html',
+          controller:'DocenteCtrl'
+        }
+      }
+    })
+    // PADRE DE VISTAS TABSEST ESTUDIANTE
+    .state('tabsEst',{
+      cache: false,
+      url:'/Gtuto',
+      abstract:true,
+      templateUrl:'templates/tabsEst.html'
+    })
+    //Hijos de TABSEST
+    .state('tabsEst.perfilEstudiante', {
+      cache: false,
+      url:'/perfilEst',
+      views:{
+        'perfil-tabsEst':{
+          templateUrl:'templates/perfilEstudiante.html',
+          controller:'SalirCtrl'
+        }
+      }
+    })
+    .state('tabsEst.CompEstudiante', {
+      cache: false,
+      url:'/componentesEst',
+      views:{
+        'componentes-tabsEst':{
+          templateUrl:'templates/CompEstudiante.html',
+          controller:'AlumnoCtrl'
+        }
+      }
+    })    
+    .state('tabsEst.ListaTutoEstudiante', {
+      cache: false,
+      url:'/componentesEst/:nombre',
+      views:{
+        'componentes-tabsEst':{
+          templateUrl:'templates/ListaTutoEstudiante.html',
+          controller:'AlumnoCtrl'
+        }
+      }
+    })
+    .state('tabsEst.notificaciones', {
+      cache: false,
+      url:'/notificacionesEst',
+      views:{
+        'notificaciones-tabsEst':{
+          templateUrl:'templates/NotEst.html',
+          controller:'AlumnoCtrl'
         }
       }
     })

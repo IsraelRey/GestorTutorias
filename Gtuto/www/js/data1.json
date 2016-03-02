@@ -3,17 +3,17 @@
   "persona": {
     "identificacion": "0921250601001",
     "primerNombre": "FERNANDA",
-    "segundoNombre": "",
+    "segundoNombre": "MARICELA",
     "primerApellido": "SOTO",
-    "segundoApellido": "",
+    "segundoApellido": "GUERRERO",
     "estadoCivil": "Soltero",
-    "nacionalidad": "",
+    "nacionalidad": "ECUATORIANA",
     "fechaNacimiento": "",
     "telefonos": [
       {
         "codigoPais": "593",
         "codigoArea": "",
-        "numero": "",
+        "numero": "0994658346",
         "extension": "0",
         "tipoTelefono": "Celular",
         "operadora": "Claro"
@@ -21,10 +21,10 @@
       {
         "codigoPais": "593",
         "codigoArea": "07",
-        "numero": "",
-        "extension": "",
+        "numero": "2570275",
+        "extension": "2975",
         "tipoTelefono": "Fijo",
-        "operadora": ""
+        "operadora": "Corporación Nacional De Telecomunicaciones Cnt"
       }
     ],
     "direccion": {
@@ -34,9 +34,9 @@
       "parroquiaNombre": "NODEFINIDO",
       "zonaResidencialNombre": "",
       "barrio": "",
-      "callePrincipal": "",
-      "calleSecundaria": "",
-      "referencia": ""
+      "callePrincipal": "San Cayetano alto",
+      "calleSecundaria": "Marcelino Champagnat",
+      "referencia": "UTPL"
     }
   }
 }
