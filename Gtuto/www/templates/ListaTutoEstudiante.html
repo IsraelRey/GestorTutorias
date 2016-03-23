@@ -1,3 +1,4 @@
+<link href="css/style.css" rel="stylesheet">
 <ion-view  view-title="Tutorías Semanales">
   <ion-content class="fondo1">
     <ion-header-bar class="bar-positive item-input-inset">
@@ -17,13 +18,13 @@
         </div>
         <div class="col col-30" style="text-align:center">
           <h4>
-              {{cont}}
-              <i ng-hide="cont"><h6>Cargando...</h6></i>
+              {{contEst}}
+              <i ng-hide="contEst"><h6>Cargando...</h6></i>
           </h4>
           <h6>Tutorías Creadas</h6>
         </div>
         <div class="col col-30" style="text-align:center">
-          <h4>{{ceEst}}</h4>
+          <h4>3</h4>
           <h6>Componentes Educativos</h6>
         </div>
       </div>        
@@ -35,8 +36,7 @@
           <i class="ion-ios-compose"></i>
           Tutorías Creadas
         </div>
-        <div class="list card" ng-repeat="i in datosTuto | filter:busqueda" 
-             ng-if="i.Residencia == nombre && i.Integrantes == paraleloEst">
+        <div class="list card" ng-repeat="i in datosTuto | filter:busqueda" ng-if="i.Residencia == nombre">
           <a class="item" href="">
             <h2><strong>Tema: {{i.Nombre}}</strong></h2>
             <h5>Creada: {{i.fecha_trama}}</h5>

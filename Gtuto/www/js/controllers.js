@@ -71,6 +71,7 @@ angular.module('starter.controllers', ['ngResource'])//se anade la dependencia n
       if($scope.datos=='true' && $scope.rol=='docente') {//si el token es true ingresa si no popUp de error
         $rootScope.cedula=data.persona.identificacion;
         $rootScope.pNombre=data.persona.primerNombre;
+        $rootScope.NombreDoc=$rootScope.pNombre.substring(0, 1);//variable para mostrar en perfil de docente
         $rootScope.sNombre=data.persona.segundoNombre;
         $rootScope.pApellido=data.persona.primerApellido;
         $rootScope.sApellido=data.persona.segundoApellido;  
@@ -80,6 +81,7 @@ angular.module('starter.controllers', ['ngResource'])//se anade la dependencia n
         if($scope.datos=='true' && $scope.rol=='estudiante') {//si el token es true ingresa si no popUp de error
           $rootScope.cedula=data.persona.identificacion;//las variables con rootscope tb pueden ser llamadas con scope.cedula x ej.
           $rootScope.pNombre=data.persona.primerNombre;
+          $rootScope.NombreEst=$rootScope.pNombre.substring(0, 1);//variable para mostrar en perfil de estudiante
           $rootScope.sNombre=data.persona.segundoNombre;
           $rootScope.pApellido=data.persona.primerApellido;
           $rootScope.sApellido=data.persona.segundoApellido;  
@@ -158,6 +160,14 @@ angular.module('starter.controllers', ['ngResource'])//se anade la dependencia n
                                 paralelo: $scope.datosComp[i].paralelos[j].paralelo});
       }
     }
+    //actualizar lista
+    $scope.doRefresh = function() {
+      ServCompEdu.servicioCompEdu($scope.cedula).success(function(data){
+        $scope.datosComp=data;
+        $scope.$broadcast('scroll.refreshComplete');        
+      })
+    };
+    //fin actualizar lista
     //TRAER TUTORIAS CREADAS para ello se llama al MostrarTuto
     MostrarTuto.servicioMostrarTuto().success(function(data){
       $scope.datosTuto=data;
@@ -248,10 +258,17 @@ angular.module('starter.controllers', ['ngResource'])//se anade la dependencia n
     //TRAER TUTORIAS CREADAS para ello se llama al MostrarTuto
     MostrarTuto.servicioMostrarTuto().success(function(data){
       $scope.datosTuto=data;
+      var TamDatosTutoEst= $scope.datosTuto.length;
+      $scope.contEst=0;
       for ( i=0; i < $rootScope.obtParaleloEst.length; i++) { //recorro el arreglo y veo si pertenece al nom_coe actual
         if ($scope.nombre == $rootScope.obtParaleloEst[i].materia){
           $scope.paraleloEst= $rootScope.obtParaleloEst[i].paralelo;//paraleloEst es creado para filtrar las tutorias
         }                 
+      }
+      for ( i=0; i < TamDatosTutoEst; i++) {  
+        if ($scope.nombre == $scope.datosTuto[i].Residencia && $scope.paraleloEst == $scope.datosTuto[i].Integrantes){
+          $scope.contEst++;//se lo crea para mostrar cuantas tutorias se van creando x componente y paralelo
+        }
       }
     })
     //FIN TRAER TUTORIAS CREADAS 

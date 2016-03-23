@@ -1,19 +1,20 @@
 <link href="css/style.css" rel="stylesheet">
 <ion-view view-title="Perfil del Usuario">
-  	<ion-content class="fondo1" scroll="false">
-		<div class="list card">
-			<div >
-		    	<img class="full-image" src="img/campus.png">
-		  	</div>
-	  		<div class="item item-avatar">
-	    		<img ng-src="img/docente.png" width="150">
-	    		<h2><strong>Docente<strong></h2>
-	    		<p>{{pNombre}} {{sNombre}} {{pApellido}} {{sApellido}} </p>
-	  		</div>
-	  		<button class="button button-small button-icon ion-log-out" ng-click="salir()"> 
-	  			Cerrar sesión
-	  		</button>	
-		</div>
- 	</ion-content>
+    <ion-content class="fondo2">
+      <img class="full-image" src="img/campus.png">
+      <div id="content">
+        <div id="profile-info">
+          <div class="perfil-circle">
+            <p>{{NombreDoc}}</p>
+          </div>
+          <h3 id="profile-description"><strong>Docente:<strong></h3>
+          <h3 id="profile-name">
+            {{pNombre}} {{sNombre}} {{pApellido}} {{sApellido}}<br>
+            <button class="button  button-icon ion-log-out" ng-click="salir()"> 
+              Cerrar sesión
+            </button>
+          </h3>          
+        </div>
+      </div>     
+    </ion-content>
 </ion-view>
-
