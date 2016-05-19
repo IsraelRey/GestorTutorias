@@ -1,25 +1,18 @@
-<link href="css/style.css" rel="stylesheet">
-<ion-view  view-title="Resumen de tutoría creada">
-  <ion-content class="fondo1">
-    <ion  ng-repeat="i in datosTuto |filter: {id:id}">
-      <div class="list card">
-        <div class="item item-divider">
-          {{i.Residencia}}
-        </div>
-        <ul class="list">
-          <li class="item item-toggle">
-            Editar contenido
+<ion-view  view-title="Resumen de la tutoría creada">
+  <ion-content class="fondo">
+    <ion-item type="item-text-wrap" ng-repeat="i in datosTuto |filter: {id:id}">
+      <ul class="list">
+        <li class="item item-toggle">
+            Editar contenido de:<br>{{i.Residencia}}
             <label class="toggle toggle-dark">
               <input type="checkbox" ng-model="editar">
-              <div class="track">
-                <div class="handle"></div>
+               <div class="track">
+                 <div class="handle"></div>
               </div>
             </label>
-          </li>
-        </ul>
-      </div>
-      
-      <div class="list card" ng-init="editar=true">
+        </li>
+      </ul>
+      <div ng-init="editar=true">
         <label class="item item-input item-stacked-label">
           <span class="input-label"><strong>Tema:</strong></span>
           <input type="text" ng-model="t" ng-init="t=i.Nombre" ng-disabled="editar">
@@ -40,19 +33,14 @@
         </label>
         <a class="button button-block icon-left ion-ios-compose button-positive" ng-click="editarTutoria(t,u,h)"  
            ng-disabled="editar">
-          Guardar Tutoría
+          Editar Tutoría
         </a>
       </div>
       <div class="list card"></div>
-      <div class="list card">
-        <div class="button-bar">
-          <a class="button button-dark  icon-left ion-ios-people" href="#/Gtuto/componentes/{{i.id}}/{{i.title}}/{{i.id}}/{{i.title}}">Participantes</a>
-          <a class="button button-dark  icon-left ion-ios-chatbubble" href="#/Gtuto/componentes/{{i.id}}/{{i.title}}/{{i.id}}/{{i.title}}">Comentarios</a>
-        </div>
-      </div> 
-    </ion-item>
+      <div class="button-bar">
+        <a class="button button-dark  icon-left ion-ios-people" href="#/Gtuto/componentes/{{i.id}}/{{i.title}}/{{i.id}}/{{i.title}}">Participantes</a>
+        <a class="button button-dark  icon-left ion-ios-chatbubble" href="#/Gtuto/componentes/{{i.id}}/{{i.title}}/{{i.id}}/{{i.title}}">Comentarios</a>
+      </div>       
+    </ion-item> 
   </ion-content>
 </ion-view>
-
-
-

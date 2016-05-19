@@ -1,6 +1,5 @@
-<link href="css/style.css" rel="stylesheet">
-<ion-view  view-title="Tutorías Semanales">
-  <ion-content class="fondo1">
+<ion-view  view-title="Tutoría semanales">
+  <ion-content class="fondo">
     <ion-header-bar class="bar-positive item-input-inset">
       <label class="item-input-wrapper">
         <i class="icon ion-search placeholder-icon"></i>
@@ -8,47 +7,39 @@
       </label>
     </ion-header-bar>
   
-    <div class="card">
-      <div class="row">
-        <div class="col col-40">
-          <div ng-repeat="i in datosComp | filter:{nom_coe:nom_coe}" style="text-align:center">
-            <h5><strong>Componente:</strong></h5>
-            <h6 ng-repeat="y in i.paralelos">{{i.nom_coe}} [{{y.paralelo}}]</h6>
+    <div class="list card">
+      <div class="row responsive-sm">
+        <div class="col">
+          <div class="item item-avatar" ng-repeat="i in datosComp | filter:{nom_coe:nom_coe}">
+            <h2><strong>Componente:</strong></h2>
+            <h3>{{i.nom_coe}}</h3>
           </div>
         </div>
-        <div class="col col-30" style="text-align:center">
-          <h4>
-              {{cont}}
-              <i ng-hide="cont"><h6>Cargando...</h6></i>
-          </h4>
-          <h6>Tutorías Creadas</h6>
-        </div>
-        <div class="col col-30" style="text-align:center">
-          <h4>3</h4>
-          <h6>Componentes Educativos</h6>
-        </div>
-      </div>  
-      <div class="row">
         <div class="col">
-          <a class="button button-small button-block  button-positive icon-left ion-plus-round"
-            ng-repeat="i in datosComp |filter: {nom_coe:nom_coe}" href="#/Gtuto/componentes/{{i.nom_coe}}/{{i.cod_coe}}">Crear Tutoría
-          </a>
+          <div class="item item-avatar">
+            <h1>{{cont}}</h1>
+            <h4>Tutorías</h4>
+          </div>
         </div>
-      </div>      
+      </div>        
     </div> 
 
     <div class="list card">
-        <div class="item item-divider" style="text-align:center">
-          <i class="ion-ios-compose"></i>
-          Tutorías Creadas
-        </div>
-        <div class="list card" ng-repeat="i in datosTuto | filter:busqueda" 
-             ng-if="i.Residencia == nom_coe && i.Integrantes == paralelo">
-          <a class="item" href="#/Gtuto/componentes/{{Nom_coe}}/EdicionTutorias/{{i.id}}">
+      <ion-list>        
+        <a class="button button-block icon-left ion-ios-plus button-outline button-positive"
+            ng-repeat="i in datosComp |filter: {nom_coe:nom_coe}" href="#/Gtuto/componentes/{{i.nom_coe}}/{{i.cod_coe}}">Agregar nueva tutoria
+        </a>
+        <div class="list card" type="item-text-wrap" ng-repeat="i in datosTuto | filter:busqueda" 
+             ng-if="i.Residencia == nom_coe">
+          <div class="item item-button-right ">
             <h2><strong>Tema: {{i.Nombre}}</strong></h2>
-            <h5>Creada: {{i.fecha_trama}}</h5>
-          </a>
+            <h5>Creada el {{i.fecha_trama}}</h5>
+            <a class="button button-clear button-dark"href="#/Gtuto/componentes/{{Nom_coe}}/EdicionTutorias/{{i.id}}">
+              <i class="icon ion-ios-arrow-right"></i>
+            </a>
+          </div>
         </div>
+      </ion-list>
     </div>
   </ion-content>
 </ion-view>

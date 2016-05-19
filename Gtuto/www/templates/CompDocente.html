@@ -1,6 +1,5 @@
-<link href="css/style.css" rel="stylesheet">
 <ion-view view-title="Componentes">
-  <ion-content class="fondo1">
+  <ion-content class="fondo"scroll="false">
     <div class="list card">
       <div class="item item-input-inset">
         <label class="item-input-wrapper">
@@ -13,7 +12,7 @@
     <div class="list card">
       <ion-list>
         <ion-item type="item-text-wrap" ng-repeat="i in datosComp" href="#/Gtuto/componentes/{{i.nom_coe}}">
-          <h3 ng-repeat="y in i.paralelos">{{i.nom_coe}} [{{y.paralelo}}]</h3> 
+          <h3>{{i.nom_coe}}</h3>      
         </ion-item>
       </ion-list>
     </div> 

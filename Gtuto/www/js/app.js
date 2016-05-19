@@ -56,7 +56,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       views:{
         'componentes-tab':{
           templateUrl:'templates/CompDocente.html',
-          controller:'DocenteCtrl'
+          controller:'ControladorLista'
         }
       }
     })    
@@ -66,17 +66,17 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       views:{
         'componentes-tab':{
           templateUrl:'templates/ListaTutoDocente.html',
-          controller:'DocenteCtrl'
+          controller:'ControladorLista'
         }
       }
     })
     .state('tabs.CrearTutoria', {
       cache: false,
-      url:'/componentes/:nom_coe/:paralelo',
+      url:'/componentes/:nom_coe/:cod_coe',
       views:{
         'componentes-tab':{
           templateUrl:'templates/CrearTutoria.html',
-          controller:'DocenteCtrl'
+          controller:'ControladorLista'
         }
       }
     })
@@ -86,7 +86,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       views:{
         'componentes-tab':{
           templateUrl:'templates/ContEdicionTuto.html',
-          controller:'DocenteCtrl'
+          controller:'ControladorLista'
         }
       }
     })
@@ -96,7 +96,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       views:{
         'componentes-tab':{
           templateUrl:'templates/comentarios.html',
-          controller:'DocenteCtrl'
+          controller:'ControladorLista'
         }
       }
     })
@@ -106,7 +106,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       views:{
         'componentes-tab':{
           templateUrl:'templates/participantes.html',
-          controller:'DocenteCtrl'
+          controller:'ControladorLista'
         }
       }
     })
@@ -116,7 +116,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       views:{
         'notificaciones-tab':{
           templateUrl:'templates/NotDoc.html',
-          controller:'DocenteCtrl'
+          controller:'ControladorLista'
         }
       }
     })
@@ -144,7 +144,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       views:{
         'componentes-tabsEst':{
           templateUrl:'templates/CompEstudiante.html',
-          controller:'AlumnoCtrl'
+          controller:'ControladorLista'
         }
       }
     })    
@@ -154,7 +154,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       views:{
         'componentes-tabsEst':{
           templateUrl:'templates/ListaTutoEstudiante.html',
-          controller:'AlumnoCtrl'
+          controller:'ControladorLista'
         }
       }
     })
@@ -164,7 +164,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       views:{
         'notificaciones-tabsEst':{
           templateUrl:'templates/NotEst.html',
-          controller:'AlumnoCtrl'
+          controller:'ControladorLista'
         }
       }
     })

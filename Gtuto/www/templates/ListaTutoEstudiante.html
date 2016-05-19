@@ -1,6 +1,5 @@
-<link href="css/style.css" rel="stylesheet">
-<ion-view  view-title="Tutorías Semanales">
-  <ion-content class="fondo1">
+<ion-view  view-title="Tutoría semanales">
+  <ion-content class="fondo">
     <ion-header-bar class="bar-positive item-input-inset">
       <label class="item-input-wrapper">
         <i class="icon ion-search placeholder-icon"></i>
@@ -9,39 +8,29 @@
     </ion-header-bar>
   
     <div class="list card">
-      <div class="row">
-        <div class="col col-40">
-          <div ng-repeat="i in datosCompEst | filter:{nombre:nombre}" style="text-align:center">
-            <h5><strong>Componente:</strong></h5>
-            <h6 ng-repeat="y in i.paralelos">{{i.nombre}} [{{y.nombre}}]</h6>
+      <div class="row responsive-sm">
+        <div class="col">
+          <div class="item item-avatar" ng-repeat="i in datosCompEst | filter:{nombre:nombre}">
+            <h2><strong>Componente:</strong></h2>
+            <h3 ng-repeat="y in i.paralelos">{{i.nombre}} [{{y.nombre}}]</h3>  
           </div>
-        </div>
-        <div class="col col-30" style="text-align:center">
-          <h4>
-              {{contEst}}
-              <i ng-hide="contEst"><h6>Cargando...</h6></i>
-          </h4>
-          <h6>Tutorías Creadas</h6>
-        </div>
-        <div class="col col-30" style="text-align:center">
-          <h4>3</h4>
-          <h6>Componentes Educativos</h6>
         </div>
       </div>        
     </div> 
-    
 
     <div class="list card">
-        <div class="item item-divider" style="text-align:center">
-          <i class="ion-ios-compose"></i>
-          Tutorías Creadas
-        </div>
-        <div class="list card" ng-repeat="i in datosTuto | filter:busqueda" ng-if="i.Residencia == nombre">
-          <a class="item" href="">
+      <ion-list>
+        <div class="list card" type="item-text-wrap" ng-repeat="i in datosTuto | filter:busqueda" 
+             ng-if="i.Residencia == nombre">
+          <div class="item item-button-right ">
             <h2><strong>Tema: {{i.Nombre}}</strong></h2>
-            <h5>Creada: {{i.fecha_trama}}</h5>
-          </a>
+            <h5>Creada el {{i.fecha_trama}}</h5>
+            <a class="button button-clear button-dark">
+              <i class="icon ion-eye"></i>
+            </a>
+          </div>
         </div>
+      </ion-list>
     </div>
   </ion-content>
 </ion-view>
