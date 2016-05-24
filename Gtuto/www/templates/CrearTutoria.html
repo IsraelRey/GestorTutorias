@@ -1,10 +1,11 @@
 <ion-view  view-title="Crear nueva tutoría">
   <ion-content class="fondo">
-    <ion-list class="list-inset">
-      <ion-item type="item-text-wrap" ng-repeat="i in datosComp |filter: {cod_coe:cod_coe}">
+    <ion-list class="list-inset" ng-repeat="i in datosComp">
+      <ion-item type="item-text-wrap" ng-repeat="x in i.paralelos |filter: {paralelo:paralelo}"
+                    ng-if="i.nom_coe == nom_coe">
       <ul class="list">
         <li class="item item-toggle">
-            Crea una tutoría para:<br>{{i.nom_coe}}
+            Crea una tutoría para:<br>{{i.nom_coe}} [{{x.paralelo}}]
         </li>
       </ul>
       <div>

@@ -4,20 +4,59 @@
     "nom_coe": "TIC-EC 2015",
     "cod_coe": "UTPL-TN0047",
     "titulacion": "DERECHO",
-    "variacion": "DERECHO UTPL-ECTS 1C"
+    "variacion": "DERECHO UTPL-ECTS 1C",
+    "creditos": "2",
+    "grupo_creditos": "",
+    "paralelos": [
+      {
+        "paralelo": "B",
+        "dia": "s/d",
+        "aula": "NO ASIGNADA",
+        "hora_inicio": "12:00:00",
+        "hora_fin": "12:00:00",
+        "cedula": "0921250601",
+        "docente": "Fernanda Maricela Soto Guerrero"
+      }
+    ]
   },
   {
     "guid_coe": "1c6c2ad9-8715-0072-e053-ac1036334fde",
     "nom_coe": "GESTIÓN DE PROYECTOS",
     "cod_coe": "PRE-TNCCO084",
     "titulacion": "SISTEMAS INFORMÁTICOS Y COMPUTACIÓN",
-    "variacion": "SISTEMAS INFORMÁTICOS Y COMPUTACIÓN UTPL-ECTS 1C"
+    "variacion": "SISTEMAS INFORMÁTICOS Y COMPUTACIÓN UTPL-ECTS 1C",
+    "creditos": "4",
+    "grupo_creditos": "Genérica",
+    "paralelos": [
+      {
+        "paralelo": "A",
+        "dia": "Martes",
+        "aula": "NO ASIGNADA",
+        "hora_inicio": "10:00:00",
+        "hora_fin": "13:00:00",
+        "cedula": "0921250601",
+        "docente": "Fernanda Maricela Soto Guerrero"
+      }
+    ]
   },
   {
     "guid_coe": "1c6fc932-3c19-0030-e053-ac10360ca317",
     "nom_coe": "METODOLOGIAS AGILES",
     "cod_coe": "PRE-TNCCO210",
     "titulacion": "SISTEMAS INFORMÁTICOS Y COMPUTACIÓN",
-    "variacion": "SISTEMAS INFORMÁTICOS Y COMPUTACIÓN UTPL-ECTS 1C"
+    "variacion": "SISTEMAS INFORMÁTICOS Y COMPUTACIÓN UTPL-ECTS 1C",
+    "creditos": "3",
+    "grupo_creditos": "",
+    "paralelos": [
+      {
+        "paralelo": "A",
+        "dia": "Jueves",
+        "aula": "NO ASIGNADA",
+        "hora_inicio": "07:30:00",
+        "hora_fin": "10:00:00",
+        "cedula": "0921250601",
+        "docente": "Fernanda Maricela Soto Guerrero"
+      }
+    ]
   }
 ]
