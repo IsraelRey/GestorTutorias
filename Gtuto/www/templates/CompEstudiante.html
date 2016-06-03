@@ -12,10 +12,29 @@
     </div>
     <div class="list card">
       <ion-list>
-        <ion-item type="item-text-wrap" ng-repeat="i in datosCompEst" href="#/Gtuto/componentesEst/{{i.nombre}}">
-          <div class="circle">{{ i.nombre | limitTo:1 }}</div>
-          <h3 ng-repeat="y in i.paralelos">{{i.nombre}} [{{y.nombre}}]</h3>       
-        </ion-item>
+        <div class="row" ng-repeat="i in datosCompEst">
+          <div class="col col-20">
+              <div>
+                <a class="circulo">{{ i.nombre | limitTo:1 }}</a>
+              </div>
+          </div>
+          <div class="col col-80">
+            <ion-item type="item-text-wrap" href="#/Gtuto/componentesEst/{{i.nombre}}">
+              <h3>{{i.nombre}}</h3>
+              <h5 ng-repeat="y in i.paralelos">PARALELO: <strong>{{y.nombre}}</strong></h5> 
+            </ion-item>
+          </div>          
+        </div>  
+      </ion-list>
+      <ion-list ng-show="Mensaje">
+        <div class="item item-body">
+          <img class="full-image" src="img/red.png">
+          <p><strong>{{Mensaje}}</strong></p>
+          <p><button  class="button button-block icon ion-loop button-positive" ng-click="RecargarPagina()">
+              Actualizar
+            </button>
+          </p>
+        </div>
       </ion-list>
     </div> 
   </ion-content>

@@ -1,5 +1,6 @@
+<link href="css/style.css" rel="stylesheet">
 <ion-view  view-title="Tutorías Semanales">
-  <ion-content class="fondo1">
+  <ion-content class="fondo2">
     <ion-header-bar class="bar-positive item-input-inset">
       <label class="item-input-wrapper">
         <i class="icon ion-search placeholder-icon"></i>
@@ -15,13 +16,21 @@
             <h6 ng-repeat="y in i.paralelos">{{i.nom_coe}} [{{y.paralelo}}]</h6>
           </div>
         </div>
-        <div class="col col-30" style="text-align:center">
+        <div class="col col-30" style="text-align:center" ng-show="cont != 0">
           <h4>
               {{cont}}
               <i ng-hide="cont"><h6>Cargando...</h6></i>
           </h4>
           <h6>Tutorías Creadas</h6>
         </div>
+        <!--Cuando hay 0 tutorias-->
+        <div class="col col-30" style="text-align:center" ng-show="cont == 0">
+          <h4>
+              {{cont}}
+          </h4>
+          <h6>Tutorías Creadas</h6>
+        </div>
+        <!--Fin Cuando hay 0 tutorias-->
         <div class="col col-30" style="text-align:center">
           <h4>{{Ce}}</h4>
           <h6>Componentes Educativos</h6>

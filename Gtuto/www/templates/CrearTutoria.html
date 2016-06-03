@@ -1,5 +1,5 @@
 <ion-view  view-title="Crear nueva tutoría">
-  <ion-content class="fondo">
+  <ion-content>
     <ion-list class="list-inset" ng-repeat="i in datosComp">
       <ion-item type="item-text-wrap" ng-repeat="x in i.paralelos |filter: {paralelo:paralelo}"
                     ng-if="i.nom_coe == nom_coe">

@@ -12,21 +12,21 @@
 
     <div class="item-input-inset">
       <label class="item-input-wrapper">
-        <i class="icon ion-ios-person placeholder-icon"></i>
+        <i class="button icon-left ion-ios-person button-clear" ng-disabled="data.username || !data.username"></i>
         <input type="text" placeholder="Usuario" ng-model="data.username">
       </label>
     </div>
     <div class="item-input-inset">
       <label class="item-input-wrapper">
-        <i class="icon ion-ios-locked placeholder-icon"></i>
+        <i class="button icon-left ion-ios-locked button-clear" ng-disabled="!data.password || data.password"></i>
         <input type="password" placeholder="Contraseña" ng-model="data.password" ng-hide="Password">
         <input type="text" placeholder="Contraseña" ng-model="data.password" ng-show="Password">
-          <label class="toggle toggle-small toggle-light">
-            <input type="checkbox" ng-model="Password">
-            <div class="track">
-              <div class="handle"></div>
-            </div>
-          </label>
+        <label class="toggle  toggle-positive">
+          <input type="checkbox" ng-model="Password">
+          <div class="track">
+            <div class="handle"></div>
+          </div>
+        </label>
       </label>
     </div>
 

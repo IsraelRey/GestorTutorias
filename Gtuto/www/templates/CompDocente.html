@@ -1,8 +1,6 @@
 <link href="css/style.css" rel="stylesheet">
 <ion-view view-title="Componentes">
-  <ion-content>
-    <ion-refresher on-refresh="doRefresh()">                     
-    </ion-refresher>
+  <ion-content class="fondo2">
     <div class="list card">
       <div class="item item-input-inset">
         <label class="item-input-wrapper">
@@ -13,12 +11,34 @@
       </div>
     </div>
     <div class="list card">
-      <ion-list>
-        <ion-item type="item-text-wrap" ng-repeat="i in datosComp" href="#/Gtuto/componentes/{{i.nom_coe}}">
-          <div class="circle">{{ i.nom_coe | limitTo:1 }}</div>
-          <h3 ng-repeat="x in i.paralelos">{{i.nom_coe}} [{{x.paralelo}}]</h3> 
-        </ion-item>
-      </ion-list>
-    </div> 
+      <div class="row" ng-repeat="i in datosComp">
+        <div class="col col-20" >
+            <div ng-repeat="x in i.paralelos">
+              <a ng-click="info(i.nom_coe,x.paralelo,i.creditos,x.dia,x.hora_inicio,x.hora_fin)"
+                 class="circulo">
+                {{ i.nom_coe | limitTo:1 }}
+              </a>
+            </div>
+        </div>
+        <div class="col col-80">
+          <ion-item type="item-text-wrap" href="#/Gtuto/componentes/{{i.nom_coe}}">
+            <h3>{{i.nom_coe}}</h3>
+            <h5 ng-repeat="x in i.paralelos">PARALELO: <strong>{{x.paralelo}}</strong></h5>
+          </ion-item>
+        </div>          
+      </div> 
+      <!--Cuando no hay red-->
+      <div class="row" ng-show="Mensaje">
+        <div class="item item-body">
+          <img class="full-image" src="img/red.png">
+          <p><strong>{{Mensaje}}</strong></p>
+          <p><button  class="button button-block icon ion-loop button-positive" ng-click="RecargarPagina()">
+              Actualizar
+            </button>
+          </p>
+        </div>
+      </div> 
+      <!--FIN Cuando no hay red-->
+    </div>
   </ion-content>
 </ion-view> 

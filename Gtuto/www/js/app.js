@@ -3,9 +3,10 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-angular.module('starter', ['ionic', 'starter.controllers'])
+var db = null;//paso 1 BD
+angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers'])
 
-.run(function($ionicPlatform) {
+.run(function($ionicPlatform, $cordovaSQLite,$state) {//paso 2 agrego cordovaSqlite
   $ionicPlatform.ready(function() {
     if(window.cordova && window.cordova.plugins.Keyboard) {
       // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
@@ -16,6 +17,27 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       // from snapping when text inputs are focused. Ionic handles this internally for
       // a much nicer keyboard experience.
       cordova.plugins.Keyboard.disableScroll(true);
+      //creo la tabla tutoria
+      db = $cordovaSQLite.openDB({ name: 'tuto.db' });//paso 3 creo  la BD
+      $cordovaSQLite.execute(db,"CREATE TABLE IF NOT EXISTS tutoria (id integer primary key, estado text, rolUs text, pNombre text, Inicial text, sNombre text, pApellido text, sApellido text, cedula text)");
+      //fin creo la tabla tutoria
+      //comprobar sesion
+      var query = "SELECT * FROM tutoria";
+      $cordovaSQLite.execute(db,query).then(function(result) {
+        for ( j=0; j < result.rows.length; j++) { 
+          if(result.rows.item(j).estado=="Sesion_Activa" && result.rows.item(j).rolUs=="docente"){
+            $state.go('tabs.perfilDocente');
+          }else{
+            if(result.rows.item(j).estado=="Sesion_Activa" && result.rows.item(j).rolUs=="estudiante"){
+              $state.go('tabsEst.perfilEstudiante');
+            }
+          }               
+        }
+        if (result.rows.length==0){
+          $state.go('login');
+        };
+      });
+      //fin comprobar sesion
     }
     if(window.StatusBar) {
       StatusBar.styleDefault();
@@ -25,6 +47,11 @@ angular.module('starter', ['ionic', 'starter.controllers'])
 //VISTAS
 .config(function($stateProvider, $urlRouterProvider) {  
   $stateProvider
+    .state('inicio',{
+      url:'/inicio',
+      templateUrl:'templates/inicio.html',
+      controller: 'InicioCtrl'
+    })
     //Login de la APP
     .state('login',{
       cache: false,
@@ -115,8 +142,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       url:'/notificaciones',
       views:{
         'notificaciones-tab':{
-          templateUrl:'templates/NotDoc.html',
-          controller:'DocenteCtrl'
+          templateUrl:'templates/NotDoc.html'
         }
       }
     })
@@ -163,11 +189,10 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       url:'/notificacionesEst',
       views:{
         'notificaciones-tabsEst':{
-          templateUrl:'templates/NotEst.html',
-          controller:'AlumnoCtrl'
+          templateUrl:'templates/NotEst.html'
         }
       }
     })
-  $urlRouterProvider.otherwise('/login');
+  $urlRouterProvider.otherwise('/inicio');
 })
 //FIN VISTAS
